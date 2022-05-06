@@ -31,9 +31,12 @@ const ContactForm = () => {
     name: 'Contact',
     action: '/thanks',
     honeypotName: 'bot-field',
+    onSuccess: (response, context) => {
+      console.log('Successfully sent form data to Netlify Server')
+    }
   });
   const onSubmit = (data) => {
-    netlify.handleSubmit('telepopmujik@gmail.com', data);
+    netlify.handleSubmit(null, data);
     console.log(data);
   };
 
