@@ -12,11 +12,11 @@ const HomePage = ({ data }) => {
 
   return (
     <Layout title={title}>
-      <Intro
+      {/* <Intro
         dangerouslySetInnerHTML={{
           __html: intro,
         }}
-      />
+      /> */}
 
       <PostList posts={posts} />
       <StyledLink

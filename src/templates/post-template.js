@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Tags from '../components/tags';
 
 const PostTemplate = ({ data }) => {
-  const { frontmatter, excerpt, html } = data.markdownRemark;
+  const { frontmatter, excerpt, html } = data?.markdownRemark;
   const prev = data.prev;
   const next = data.next;
 
@@ -14,7 +14,8 @@ const PostTemplate = ({ data }) => {
       title={frontmatter.title}
       description={frontmatter.description || excerpt}
       socialImage={
-        frontmatter.social_image ? frontmatter.social_image.absolutePath : ''
+        // frontmatter.social_image ? frontmatter.social_image.absolutePath : ''
+        ''
       }
     >
       <PostWrapper>
@@ -184,9 +185,6 @@ export const pageQuery = graphql`
         tags
         date(formatString: "MMMM DD, YYYY")
         description
-        social_image {
-          absolutePath
-        }
       }
     }
 
@@ -209,3 +207,39 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+// export const pageQuery = graphql`
+//   query PostBySlug($slug: String!, $prevSlug: String, $nextSlug: String) {
+//     markdownRemark(fields: { slug: { eq: $slug } }) {
+//       excerpt(pruneLength: 160)
+//       html
+//       frontmatter {
+//         title
+//         tags
+//         date(formatString: "MMMM DD, YYYY")
+//         description
+//         social_image {
+//           absolutePath
+//         }
+//       }
+//     }
+
+//     prev: markdownRemark(fields: { slug: { eq: $prevSlug } }) {
+//       frontmatter {
+//         title
+//       }
+//       fields {
+//         slug
+//       }
+//     }
+
+//     next: markdownRemark(fields: { slug: { eq: $nextSlug } }) {
+//       frontmatter {
+//         title
+//       }
+//       fields {
+//         slug
+//       }
+//     }
+//   }
+// `;

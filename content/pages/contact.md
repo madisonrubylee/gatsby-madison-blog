@@ -3,6 +3,6 @@ title: 'Contact Me'
 template: 'contact-template'
 ---
 
-# Get in Touch.
+# <span style="color:#0064FF">  Get in Touch.</span>
 
-If you've got an inquiry for a job or project,drop me a line at hello@hello.com or fill the form right here.
+
