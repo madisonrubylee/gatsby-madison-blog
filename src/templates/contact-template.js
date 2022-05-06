@@ -33,7 +33,7 @@ const ContactForm = () => {
     honeypotName: 'bot-field',
   });
   const onSubmit = (data) => {
-    netlify.handleSubmit(null, data);
+    netlify.handleSubmit('telepopmujik@gmail.com', data);
     console.log(data);
   };
 
