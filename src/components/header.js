@@ -33,6 +33,10 @@ const Header = () => {
             <Link to="/about">About</Link>
           </HeaderNavListItem>
 
+          <HeaderNavListItem>
+            <Link to="/experience">Experience</Link>
+          </HeaderNavListItem>
+
           {/* <HeaderNavListItem>
             <Link to="/contact">Contact</Link>
           </HeaderNavListItem> */}
